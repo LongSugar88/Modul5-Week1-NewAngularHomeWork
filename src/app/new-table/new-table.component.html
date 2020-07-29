@@ -1,1 +1,33 @@
-
+<div>
+  <table class="table">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Name</th>
+      <th scope="col">Sex</th>
+      <th scope="col">Email</th>
+      <th scope="col">Handle</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let i = index; let user of userFilter">
+      <th scope="row">{{i + 1}}</th>
+      <td>{{user.name}}</td>
+      <td>{{user.gender}}</td>
+      <td>{{user.email}}</td>
+      <td><button class="btn btn-danger" (click) = "delete(user.id)">Delete</button></td>
+    </tr>
+    <tr>
+      <td><input type="text" id = "user_id" placeholder="ID" disabled style="width: 50px"></td>
+      <td><input type="text" id = "user_name" placeholder="Name"></td>
+      <td>
+        <div>
+          <app-new-group></app-new-group>
+        </div>
+      </td>
+      <td><input type="text" id = "user_email" placeholder="Email"></td>
+      <td><button class="btn btn-success" (click) = "addUser()">Add</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>
